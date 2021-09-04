@@ -17,7 +17,10 @@ public class InputManager {
 		else
 			return false;
 	}
-
+	// todo
+	public static boolean IsMoseDown(){
+		return false;
+	}
 	public static boolean KeyTyped(int keycode) {
 		if (keys2.containsKey(keycode)) {
 			boolean a = keys2.get(keycode);

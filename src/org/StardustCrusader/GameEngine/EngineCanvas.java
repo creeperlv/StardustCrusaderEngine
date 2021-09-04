@@ -45,17 +45,23 @@ public class EngineCanvas extends Canvas {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
+                int MX = e.getX();
+                int MY = e.getY();
             }
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                int MX = e.getX();
+                int MY = e.getY();
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
             }
+
             @Override
-            public void mouseWheelMoved(MouseWheelEvent e){}
+            public void mouseWheelMoved(MouseWheelEvent e) {
+            }
         });
         this.requestFocus();
         this.addComponentListener(new ComponentAdapter() {
@@ -127,6 +133,12 @@ public class EngineCanvas extends Canvas {
         g2.setFont(new Font("Serif", Font.PLAIN, 18));
     }
 
+    /**
+     * Where Update() is executed. Usually, it should not be called manually.
+     * 
+     * @param g
+     * @param GO
+     */
     public void ExecuteRecursively(Graphics2D g, GameObject GO) {
         if (GO.isActive == false)
             return;

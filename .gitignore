@@ -1,2 +1,7 @@
 bin/
 .idea/
+obj/
+Build/
+Jar/
+Releases/
+.vscode/

@@ -1,6 +1,8 @@
 package org.StardustCrusader.GameEngine;
 
+import java.net.URL;
 import java.util.HashMap;
+import java.awt.*;
 
 public class InputManager {
 	static HashMap<Integer, Boolean> keys = new HashMap<Integer, Boolean>();
@@ -16,6 +18,20 @@ public class InputManager {
 			return keys.get(keycode);
 		else
 			return false;
+	}
+	public static void HideCursor(){
+		
+		URL classUrl = InputManager.class.getResource("");  
+		Image imageCursor = Toolkit.getDefaultToolkit().getImage(classUrl);  
+		EngineObjectPool.canvas.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+                    imageCursor,  new Point(0, 0), "cursor"));  
+	}
+	public static void ShowCursor(){
+		
+		URL classUrl = InputManager.class.getResource("");  
+		Image imageCursor = Toolkit.getDefaultToolkit().getImage(classUrl);  
+		EngineObjectPool.canvas.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+                    imageCursor,  new Point(0, 0), "cursor"));  
 	}
 	// todo
 	public static boolean IsMoseDown(){

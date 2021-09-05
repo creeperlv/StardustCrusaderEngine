@@ -8,7 +8,20 @@ public class GameObject extends GameBehavior {
 	public Transform transform = new Transform(this);
 	public ArrayList<GameObject> Children = new ArrayList<GameObject>();
 	public ArrayList<GameBehavior> Components = new ArrayList<GameBehavior>();
-
+	/**
+	 * Gets a component.
+	 * @param <T>
+	 * @param t
+	 * @return
+	 */
+	public <T extends GameBehavior> GameBehavior GetComponent(Class<T> t){
+		for (GameBehavior b : Components) {
+			if(b.getClass().equals(t)){
+				return b;
+			}
+		}
+		return null;
+	}
 	/**
 	 * Initiate the object to world space.
 	 * 

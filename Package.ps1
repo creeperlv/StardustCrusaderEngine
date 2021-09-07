@@ -7,7 +7,8 @@ if (!(Test-Path 'Build')) {
 if ((Test-Path '.\Build\SCE-Latest.jar')) {
     Remove-Item .\Build\SCE-Latest.jar
 }
-
+Write-Output '[Package]Starting create asset bundle...'
+.\AssetBundleCreate.ps1
 Write-Output '[Package]Packaging with JAR'
 jar -c  -f .\Build\SCE-Latest.jar  -C '.\bin\' .\org\
 Write-Output '[Package]Done.'
